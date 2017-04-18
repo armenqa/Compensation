@@ -1,21 +1,11 @@
 package aca.first.test;
-
-
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
-
-        import org.openqa.selenium.By;
-
-        import org.openqa.selenium.interactions.Actions;
-
-        import org.testng.annotations.AfterTest;
-
-        import org.testng.annotations.Test;
-
-        import org.openqa.selenium.firefox.FirefoxDriver;
-
-
-        import static org.testng.AssertJUnit.assertEquals;
+import org.openqa.selenium.By;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.Test;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class MyFirstWebDriverTest {
     Xpaths xpaths=new Xpaths();
@@ -52,7 +42,6 @@ public class MyFirstWebDriverTest {
         //press submit
         driver.findElement(xpaths.submit).click();
         Thread.sleep(4000);
-
     }
     /*
         Preconditions: When we logged in
@@ -80,9 +69,7 @@ public class MyFirstWebDriverTest {
         //Should be redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
         Thread.sleep(5000);
         //Verify that we redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
-
     }
-
 	/*
 		Preconditions: When we logged in
 		Steps
@@ -94,7 +81,6 @@ public class MyFirstWebDriverTest {
 		Actual result: Should be shown all information in the list
 		Expected result: We se all information of list
      */
-
     @Test()
     public void employees() throws InterruptedException {
 
@@ -146,14 +132,12 @@ public class MyFirstWebDriverTest {
         driver.findElement(xpaths.detailsElement).click();
         //Our "Base,TTC,TDC" information should be updated
     }
-
     /*
         Preconditions: When we logged in
         Steps
         1: Click on the "Market Matcher" button on main menu
         2: Click on the "Show all items icon"
         3: In list click on the "Engineer" row
-
         Actual result: Should be shown the Engineers details
         Expected result: We see the Engineers details
      */
@@ -162,30 +146,39 @@ public class MyFirstWebDriverTest {
 
         //driver.findElement(By.xpath("/html/body/div/header/div/div[2]/nav/ul/ul/li[4]/a")).click();
         Thread.sleep(3000);
-        driver.findElement(By.xpath("//a[text()='Jobs Reports']")).click();
+        driver.findElement(xpaths.MarketA).click();
         Thread.sleep(3000);
     }
-
-
     /*
         Preconditions: When we logged in
         Steps
             1: Hover on the "Reports" button on main menu
             2: Click on the "Jobs Reports" from the "Reports" dropdown menu
+            3: Click on the "Grade" icon and import in input field  30 
         Actual result: Should be redirect on the "http://compensation.codebnb.me/reports/jobs-reports/" page
         Expected result: We navigated on the "http://compensation.codebnb.me/reports/jobs-reports/" page
         */
     @Test()
     public void reports() throws InterruptedException {
+        //Navigate on the "job reports page"
+        driver.navigate().to("http://compensation.codebnb.me/reports/jobs-reports/");
+        Thread.sleep(3000);
+        //Click on the "Grade icon"
+        driver.findElement(xpaths.jobReportsIcon).click();
+        Thread.sleep(3000);
+        //Click on the "Grade" input field and import 30 on this field
+        driver.findElement(xpaths.GradeInput).sendKeys("30" );
+        driver.findElement(xpaths.GradeInputSearch).click();
+        Thread.sleep(3000);
 
-        Actions builder = new Actions(driver);
-        //Hover on the "Reports" button on main menu
-        builder.moveToElement(driver.findElement(xpaths.reports)).perform();
-        Thread.sleep(2000);
-        // Click on the "Jobs Reports" from the "Reports" dropdown menu
-        builder.moveToElement(driver.findElement(xpaths.jobReports)).click();
-        Thread.sleep(2000);
-        //driver.findElement(By.xpath("//button[@class='fadeToggleBtn']")).click();
+//        Actions builder = new Actions(driver);
+//        //Hover on the "Reports" button on main menu
+//        builder.moveToElement(driver.findElement(xpaths.reports)).perform();
+//        Thread.sleep(2000);
+//        // Click on the "Jobs Reports" from the "Reports" dropdown menu
+//        builder.moveToElement(driver.findElement(xpaths.jobReports)).click();
+//        Thread.sleep(2000);
+//        //driver.findElement(By.xpath("//button[@class='fadeToggleBtn']")).click();
 
 //		driver.findElement(By.xpath(".//*[@id='employee_table']/div/div[2]/table/thead/tr/th[2]/button")).click();
 //		Thread.sleep(10000);

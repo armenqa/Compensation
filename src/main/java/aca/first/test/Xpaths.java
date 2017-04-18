@@ -7,10 +7,16 @@ public class Xpaths {
     //reports
     final   By reports = By.xpath("//a[@href='#']");
     final  By jobReports = By.xpath("//a[contains(.,'Jobs Reports')]");
+    final  By jobReportsIcon = By.xpath("//button[@data-target='#id_grade']");
     //marketMatcher
     final   By marketMatcher = By.xpath("//a[text()='Market Matcher']");
     final   By comboBox = By.xpath("//a[@class='custom-combobox-toggle ui-corner-right']");
     final   By liEngineer = By.xpath("//li[text()='Engineer']");
+    final   By MarketA = By.xpath("//a[text()='Jobs Reports']");
+    final   By GradeInput = By.xpath(".//input[@data-name='grade' and @type='text']");
+    final   By GradeInputSearch = By.xpath(".//button[@class='search-filter-job_report' and @data-name='grade']");
+
+
     //surveys
     final   By surveys = By.xpath("//a[text()='Surveys']");
     final   By surveyData = By.xpath(".//*[@id='A278 - 2'] ");
