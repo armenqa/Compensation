@@ -1,14 +1,15 @@
-package aca.first.test;
+package test;
 
 import org.openqa.selenium.By;
 
 
 public class Xpaths {
     //reports
-    final   By reports = By.xpath("//a[@href='#']");
-    final  By jobReports = By.xpath("//a[contains(.,'Jobs Reports')]");
+    final   By reports = By.xpath("//a[text()='Reports']");
+    final  By jobReports = By.xpath("//a[contains(@class,'reportBtn')]");
     final  By jobReportsIcon = By.xpath("//button[@data-target='#id_grade']");
     //marketMatcher
+
     final   By marketMatcher = By.xpath("//a[text()='Market Matcher']");
     final   By comboBox = By.xpath("//a[@class='custom-combobox-toggle ui-corner-right']");
     final   By liEngineer = By.xpath("//li[text()='Engineer']");

@@ -1,4 +1,4 @@
-package aca.first.test;
+package test;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.By;
@@ -53,23 +53,23 @@ public class MyFirstWebDriverTest {
         Actual result: Should be redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
         Expected result: We navigated on the "http://compensation.codebnb.me/jobs/edit/6675/" page
      */
-    @Test()
-    public void jobList() throws InterruptedException {
-        //Click on the "JOB LIST" button on main menu
-        driver.findElement(xpaths.jobList).click();
-        Thread.sleep(5000);
-        //Verify that we redirected on the page "Job List"
-        assertEquals("City of Houston: Job list", driver.findElement(xpaths.verifyJoblist).getText());
-        Thread.sleep(4000);
-        //Click on the dropdown item to "Find Job"
-        driver.findElement(xpaths.findJobDropdown).click();
-        Thread.sleep(6000);
-        //Click on the firs "Edit" icon of  list
-        driver.findElement(xpaths.firstEdit).click();
-        //Should be redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
-        Thread.sleep(5000);
-        //Verify that we redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
-    }
+//    @Test()
+//    public void jobList() throws InterruptedException {
+//        //Click on the "JOB LIST" button on main menu
+//        driver.findElement(xpaths.jobList).click();
+//        Thread.sleep(5000);
+//        //Verify that we redirected on the page "Job List"
+//        assertEquals("City of Houston: Job list", driver.findElement(xpaths.verifyJoblist).getText());
+//        Thread.sleep(4000);
+//        //Click on the dropdown item to "Find Job"
+//        driver.findElement(xpaths.findJobDropdown).click();
+//        Thread.sleep(6000);
+//        //Click on the firs "Edit" icon of  list
+//        driver.findElement(xpaths.firstEdit).click();
+//        //Should be redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
+//        Thread.sleep(5000);
+//        //Verify that we redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
+//    }
 	/*
 		Preconditions: When we logged in
 		Steps
@@ -81,32 +81,32 @@ public class MyFirstWebDriverTest {
 		Actual result: Should be shown all information in the list
 		Expected result: We se all information of list
      */
-    @Test()
-    public void employees() throws InterruptedException {
-
-        //navigate to the Employees page
-        driver.findElement(xpaths.employes).click();
-        Thread.sleep(4000);
-        //click on the "Last name" icon
-        driver.findElement(xpaths.lastNameIcon).click();
-        Thread.sleep(4000);
-        //click on the input field "Last name icon" and enter the "Tina"
-        driver.findElement(xpaths.inpFild).sendKeys("Tina" );
-        Thread.sleep(4000);
-        //click on the search icon  //should be shown only "Tyna" information in the list
-        driver.findElement(xpaths.searchbutton).click();
-        Thread.sleep(4000);
-        //click on the search icon
-        driver.findElement(xpaths.searchIcon).click();
-        Thread.sleep(4000);
-        //clear "Tena" in the input field
-        driver.findElement(xpaths.clearTina).clear();
-        //click on the search icon  //should be shown all information in the list
-        driver.findElement(xpaths.searchbutton).click();
-        Thread.sleep(4000);
-        //navigate second page of "Employees"
-        driver.findElement(xpaths.navigateSecond).click();
-    }
+//    @Test()
+//    public void employees() throws InterruptedException {
+//
+//        //navigate to the Employees page
+//        driver.findElement(xpaths.employes).click();
+//        Thread.sleep(4000);
+//        //click on the "Last name" icon
+//        driver.findElement(xpaths.lastNameIcon).click();
+//        Thread.sleep(4000);
+//        //click on the input field "Last name icon" and enter the "Tina"
+//        driver.findElement(xpaths.inpFild).sendKeys("Tina" );
+//        Thread.sleep(4000);
+//        //click on the search icon  //should be shown only "Tyna" information in the list
+//        driver.findElement(xpaths.searchbutton).click();
+//        Thread.sleep(4000);
+//        //click on the search icon
+//        driver.findElement(xpaths.searchIcon).click();
+//        Thread.sleep(4000);
+//        //clear "Tena" in the input field
+//        driver.findElement(xpaths.clearTina).clear();
+//        //click on the search icon  //should be shown all information in the list
+//        driver.findElement(xpaths.searchbutton).click();
+//        Thread.sleep(4000);
+//        //navigate second page of "Employees"
+//        driver.findElement(xpaths.navigateSecond).click();
+//    }
     /*
         Preconditions: When we logged in
         Steps
@@ -117,21 +117,21 @@ public class MyFirstWebDriverTest {
         Actual result: Our "Base,TTC,TDC" information should be updated
         Expected result: The informations of "Base,TTC,TDC" are updated
      */
-    @Test()
-    public void surveys() throws InterruptedException {
-        //Click on the "Surveys" button on main menu
-        driver.findElement(xpaths.surveys).click();
-        Thread.sleep(4000);
-        //Click on the first row of the "Survey Data" list
-        driver.findElement(xpaths.surveyData).click();
-        Thread.sleep(3000);
-        //Click on the drop down icon of the "Details"    http://joxi.ru/bmoJ9jecZzKGry
-        driver.findElement(xpaths.detailsIcon).click();
-        Thread.sleep(3000);
-        //Click on the fourth element of the drop down list of "Details"
-        driver.findElement(xpaths.detailsElement).click();
-        //Our "Base,TTC,TDC" information should be updated
-    }
+//    @Test()
+//    public void surveys() throws InterruptedException {
+//        //Click on the "Surveys" button on main menu
+//        driver.findElement(xpaths.surveys).click();
+//        Thread.sleep(4000);
+//        //Click on the first row of the "Survey Data" list
+//        driver.findElement(xpaths.surveyData).click();
+//        Thread.sleep(3000);
+//        //Click on the drop down icon of the "Details"    http://joxi.ru/bmoJ9jecZzKGry
+//        driver.findElement(xpaths.detailsIcon).click();
+//        Thread.sleep(3000);
+//        //Click on the fourth element of the drop down list of "Details"
+//        driver.findElement(xpaths.detailsElement).click();
+//        //Our "Base,TTC,TDC" information should be updated
+//    }
     /*
         Preconditions: When we logged in
         Steps
@@ -141,33 +141,38 @@ public class MyFirstWebDriverTest {
         Actual result: Should be shown the Engineers details
         Expected result: We see the Engineers details
      */
-    @Test()
-    void openMarketMatcher() throws InterruptedException {
-
-        //driver.findElement(By.xpath("/html/body/div/header/div/div[2]/nav/ul/ul/li[4]/a")).click();
-        Thread.sleep(3000);
-        driver.findElement(xpaths.MarketA).click();
-        Thread.sleep(3000);
-    }
+//    @Test()
+//    void openMarketMatcher() throws InterruptedException {
+//
+//        //driver.findElement(By.xpath("/html/body/div/header/div/div[2]/nav/ul/ul/li[4]/a")).click();
+//        Thread.sleep(3000);
+//        driver.findElement(xpaths.MarketA).click();
+//        Thread.sleep(3000);
+//    }
     /*
         Preconditions: When we logged in
         Steps
             1: Hover on the "Reports" button on main menu
             2: Click on the "Jobs Reports" from the "Reports" dropdown menu
-            3: Click on the "Grade" icon and import in input field  30 
+            3: Click on the "Grade" icon and import in input field  30
         Actual result: Should be redirect on the "http://compensation.codebnb.me/reports/jobs-reports/" page
         Expected result: We navigated on the "http://compensation.codebnb.me/reports/jobs-reports/" page
         */
     @Test()
     public void reports() throws InterruptedException {
         //Navigate on the "job reports page"
-        driver.navigate().to("http://compensation.codebnb.me/reports/jobs-reports/");
+
+//        driver.navigate().to("http://compensation.codebnb.me/reports/jobs-reports/");
+        driver.navigate().to("http://compensation.codebnb.me/");
         Thread.sleep(3000);
         //Click on the "Grade icon"
-        driver.findElement(xpaths.jobReportsIcon).click();
+        System.out.print("BEFORE REPORT");
+        driver.findElement(xpaths.reports).click();
+        driver.findElement(xpaths.jobReports).click();
         Thread.sleep(3000);
         //Click on the "Grade" input field and import 30 on this field
         driver.findElement(xpaths.GradeInput).sendKeys("30" );
+        //search
         driver.findElement(xpaths.GradeInputSearch).click();
         Thread.sleep(3000);
 
