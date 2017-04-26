@@ -1,15 +1,18 @@
 package test;
+import Pages.LoginPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class MyFirstWebDriverTest {
+    private WebDriver driver = new FirefoxDriver();
     Xpaths xpaths=new Xpaths();
-    private WebDriver driver;
+    LoginPage loginPage = new LoginPage(driver);
+
     /*
     Steps
     1: Opened "Mozilla Firefox".
@@ -21,27 +24,44 @@ public class MyFirstWebDriverTest {
     Expected result: Redirected on the "http://compensation.codebnb.me/" page.
      */
     @BeforeTest()
-    private void  sighninDriver() throws InterruptedException {
+    public void  sighninDriver() throws InterruptedException {
+
         // Opened "Mozilla Firefox"
-        driver = new FirefoxDriver();
+
         // Open http://compensation.codebnb.me/ page
-        driver.get("http://compensation.codebnb.me/");
+        driver.get("http://compensation.codebnb.me/accounts/login/");
         // Make sure that our site has an element by this xpath    //span[contains(.,'Compensation')]
-        assertEquals("COMPENSATION", driver.findElement(By.xpath("//span[contains(.,'Compensation')]")).getText());
+//        assertEquals("COMPENSATION", driver.findElement(By.xpath("//span[contains(.,'Compensation')]")).getText());
         // Make sure that our site has an element by this xpath    //a[@href='/accounts/login']"
-        assertEquals("SIGN IN", driver.findElement(By.xpath("//a[@href='/accounts/login']")).getText());
-        // Click on the button "SIGN IN"
+    //    assertEquals("SIGN IN", driver.findElement(By.xpath("//a[@href='/accounts/login']")).getText());
+    }
+    @Test()
+    public void  logTrue() throws InterruptedException {
+
+        //Thread.sleep(2000);
+        //driver.findElement(xpaths.login).click();
+        Thread.sleep(9000);
+        //shoud be opened "login" and "password" popup window
+        loginPage.login("armen","Password");
+       // Thread.sleep(4000);
+        Thread.sleep(3000);
+        //press submit
+        loginPage.submit();
+        Thread.sleep(4000);
+
+    }
+
+    @Test()
+    public void  logEmpty() throws InterruptedException {
         driver.findElement(xpaths.login).click();
         //shoud be opened "login" and "password" popup window
         Thread.sleep(2000);
-        // sendkey for the input field "username"
-        driver.findElement(xpaths.username).sendKeys("armen" );
-        // sendkey for the input field "password"
-        driver.findElement(xpaths.password).sendKeys("Password" );
+        //loginPage.login("","");
         Thread.sleep(3000);
         //press submit
-        driver.findElement(xpaths.submit).click();
+       // loginPage.submit();
         Thread.sleep(4000);
+
     }
     /*
         Preconditions: When we logged in
@@ -157,9 +177,9 @@ public class MyFirstWebDriverTest {
             3: Click on the "Grade" icon and import in input field  30
         Actual result: Should be redirect on the "http://compensation.codebnb.me/reports/jobs-reports/" page
         Expected result: We navigated on the "http://compensation.codebnb.me/reports/jobs-reports/" page
-        */
-    @Test()
-    public void reports() throws InterruptedException {
+
+//    @Test()
+   public void reports() throws InterruptedException {
         //Navigate on the "job reports page"
 
 //        driver.navigate().to("http://compensation.codebnb.me/reports/jobs-reports/");
@@ -189,13 +209,13 @@ public class MyFirstWebDriverTest {
 //		Thread.sleep(10000);
     }
 
+*/
 
 
 
-
-    @AfterTest
-    private void  closeDriver(){
-        driver.close();
+   @AfterTest
+   private void  closeDriver(){
+       driver.close();
         driver.quit();
     }
 
