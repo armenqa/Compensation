@@ -31,7 +31,7 @@ public class MyFirstWebDriverTest {
         webdriver=driver.driver();
         loginPage = new LoginPage(webdriver);
     }
-    @Test()
+    @Test(priority=3)
     public void  logTrue() throws InterruptedException {
         webdriver.findElement(xpaths.log).click();
         Thread.sleep(2000);
@@ -43,9 +43,11 @@ public class MyFirstWebDriverTest {
         Thread.sleep(4000);
         //hamozvum enq logout buttoni arkayutyun@
         assertEquals("LOGOUT",webdriver.findElement(xpaths.logOut).getText());
+        webdriver.findElement(xpaths.logOut).click();
+        Thread.sleep(3000);
     }
 
-    @Test()
+    @Test(priority=1)
     public  void logFalce() throws InterruptedException{
         webdriver.findElement(xpaths.log).click();
         Thread.sleep(2000);
@@ -55,14 +57,13 @@ public class MyFirstWebDriverTest {
         //press submit
         loginPage.submit();
         Thread.sleep(4000);
-        //hamozvum enq logout buttoni arkayutyun@
-        
-        assertEquals("Invalid username or password",webdriver.findElement(xpaths.errore).getText());
+        //hamozvum enq vor haytnvela errore messege
+        webdriver.findElement(By.xpath(".//*[@id='login_form']/ul/li")).isDisplayed();
+        webdriver.findElement(xpaths.logOut).click();
+        Thread.sleep(3000);
     }
 
-
-
-    @Test()
+    @Test(priority=2)
     public void  logEmpty() throws InterruptedException {
        webdriver.findElement(xpaths.log).click();
         //shoud be opened "login" and "password" popup window
@@ -72,9 +73,10 @@ public class MyFirstWebDriverTest {
         //press submit
         loginPage.submit();
         Thread.sleep(4000);
-        //hamozvum enq logout buttoni arkayutyun@
+        //hamozvum enq vor haytnvela errore messege
         assertEquals("LOGOUT",webdriver.findElement(xpaths.logOut).getText());
-
+        webdriver.findElement(xpaths.logOut).click();
+        Thread.sleep(3000);
     }
     /*
         Preconditions: When we logged in
