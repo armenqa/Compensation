@@ -58,7 +58,7 @@ public class MyFirstWebDriverTest {
         loginPage.submit();
         Thread.sleep(4000);
         //hamozvum enq vor haytnvela errore messege
-        webdriver.findElement(By.xpath(".//*[@id='login_form']/ul/li")).isDisplayed();
+        webdriver.findElement(xpaths.errore).isDisplayed();
         webdriver.findElement(xpaths.logOut).click();
         Thread.sleep(3000);
     }
@@ -74,7 +74,7 @@ public class MyFirstWebDriverTest {
         loginPage.submit();
         Thread.sleep(4000);
         //hamozvum enq vor haytnvela errore messege
-        assertEquals("LOGOUT",webdriver.findElement(xpaths.logOut).getText());
+        webdriver.findElement(xpaths.errore).isDisplayed();
         webdriver.findElement(xpaths.logOut).click();
         Thread.sleep(3000);
     }
