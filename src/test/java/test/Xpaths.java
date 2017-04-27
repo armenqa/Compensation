@@ -38,10 +38,13 @@ public class Xpaths {
     final   By findJobDropdown = By.xpath("//a[@data-original-title='Show All Items']");
     final   By firstEdit = By.xpath(".//tbody/tr[1]/td[9]/a");
     //sighnin
-    final   By login = By.xpath("//a[@href='/accounts/login']");
+    final   By log = By.xpath("//a[@href='/accounts/login']");
     final   By username = By.xpath("//input[@id='id_username']");
     final   By password = By.xpath("//input[@id='id_password']");
     final   By submit = By.xpath("//input[@class='btn blockBtn blue']");
+    final   By logOut = By.xpath("//a[@href='/accounts/logout/']");
+    final   By errore = By.xpath(".//*[@id='login_form']/ul/li");
+
 
 
 }

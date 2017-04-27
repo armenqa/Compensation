@@ -1,17 +1,20 @@
 package test;
-import Pages.LoginPage;
-import org.openqa.selenium.WebDriver;
+import core.Driver;
 import org.openqa.selenium.By;
+import pages.LoginPage;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 import static org.testng.AssertJUnit.assertEquals;
 
 public class MyFirstWebDriverTest {
-    private WebDriver driver = new FirefoxDriver();
     Xpaths xpaths=new Xpaths();
-    LoginPage loginPage = new LoginPage(driver);
+    Driver driver=new Driver();
+    WebDriver webdriver;
+    LoginPage loginPage;
+
 
     /*
     Steps
@@ -25,42 +28,52 @@ public class MyFirstWebDriverTest {
      */
     @BeforeTest()
     public void  sighninDriver() throws InterruptedException {
-
-        // Opened "Mozilla Firefox"
-
-        // Open http://compensation.codebnb.me/ page
-        driver.get("http://compensation.codebnb.me/accounts/login/");
-        // Make sure that our site has an element by this xpath    //span[contains(.,'Compensation')]
-//        assertEquals("COMPENSATION", driver.findElement(By.xpath("//span[contains(.,'Compensation')]")).getText());
-        // Make sure that our site has an element by this xpath    //a[@href='/accounts/login']"
-    //    assertEquals("SIGN IN", driver.findElement(By.xpath("//a[@href='/accounts/login']")).getText());
+        webdriver=driver.driver();
+        loginPage = new LoginPage(webdriver);
     }
     @Test()
     public void  logTrue() throws InterruptedException {
-
-        //Thread.sleep(2000);
-        //driver.findElement(xpaths.login).click();
-        Thread.sleep(9000);
+        webdriver.findElement(xpaths.log).click();
+        Thread.sleep(2000);
         //shoud be opened "login" and "password" popup window
         loginPage.login("armen","Password");
-       // Thread.sleep(4000);
         Thread.sleep(3000);
         //press submit
         loginPage.submit();
         Thread.sleep(4000);
-
+        //hamozvum enq logout buttoni arkayutyun@
+        assertEquals("LOGOUT",webdriver.findElement(xpaths.logOut).getText());
     }
 
     @Test()
-    public void  logEmpty() throws InterruptedException {
-        driver.findElement(xpaths.login).click();
-        //shoud be opened "login" and "password" popup window
+    public  void logFalce() throws InterruptedException{
+        webdriver.findElement(xpaths.log).click();
         Thread.sleep(2000);
-        //loginPage.login("","");
+        //shoud be opened "login" and "password" popup window
+        loginPage.login("adasdczxzxcsdfdrrhhddg","345353sfsdf");
         Thread.sleep(3000);
         //press submit
-       // loginPage.submit();
+        loginPage.submit();
         Thread.sleep(4000);
+        //hamozvum enq logout buttoni arkayutyun@
+        
+        assertEquals("Invalid username or password",webdriver.findElement(xpaths.errore).getText());
+    }
+
+
+
+    @Test()
+    public void  logEmpty() throws InterruptedException {
+       webdriver.findElement(xpaths.log).click();
+        //shoud be opened "login" and "password" popup window
+        Thread.sleep(2000);
+        loginPage.login("","");
+        Thread.sleep(3000);
+        //press submit
+        loginPage.submit();
+        Thread.sleep(4000);
+        //hamozvum enq logout buttoni arkayutyun@
+        assertEquals("LOGOUT",webdriver.findElement(xpaths.logOut).getText());
 
     }
     /*
@@ -215,8 +228,8 @@ public class MyFirstWebDriverTest {
 
    @AfterTest
    private void  closeDriver(){
-       driver.close();
-        driver.quit();
+      webdriver.close();
+       webdriver.quit();
     }
 
 }
