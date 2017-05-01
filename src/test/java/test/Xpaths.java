@@ -12,8 +12,9 @@ public class Xpaths {
 
     final   By marketMatcher = By.xpath("//a[text()='Market Matcher']");
     final   By comboBox = By.xpath("//a[@class='custom-combobox-toggle ui-corner-right']");
-    final   By liEngineer = By.xpath("//li[text()='Engineer']");
-    final   By MarketA = By.xpath("//a[text()='Jobs Reports']");
+    final   By lisecond = By.xpath("//ul[@id='ui-id-3']/li[2]");
+    final   By gradeVerify = By.xpath("//span[@class='tdElement']");
+  //  final   By MarketA = By.xpath("//a[text()='Jobs Reports']");
     final   By GradeInput = By.xpath(".//input[@data-name='grade' and @type='text']");
     final   By GradeInputSearch = By.xpath(".//button[@class='search-filter-job_report' and @data-name='grade']");
 
@@ -34,7 +35,7 @@ public class Xpaths {
     //jobList
     final   By employees = By.xpath("//a[text()='Employees']");
     final   By jobList = By.xpath("//a[text()='Job List']");
-    final   By verifyJoblist = By.xpath("//h6[text()='City of Houston: Job list']");
+    final   By verifyJoblist = By.xpath("//h6[text()='Genesis Healthcare: Job list']");
     final   By findJobDropdown = By.xpath("//a[@data-original-title='Show All Items']");
     final   By firstEdit = By.xpath(".//tbody/tr[1]/td[9]/a");
     //sighnin

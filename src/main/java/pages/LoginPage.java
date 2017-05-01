@@ -1,16 +1,9 @@
 package pages;
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import org.openqa.selenium.support.PageFactory;
-
-import java.lang.reflect.Proxy;
-
-/**
- * Created by STDev_003 on 4/25/2017.
- */
 public class LoginPage {
    protected WebDriver driver;
     public LoginPage(WebDriver driver){
@@ -30,11 +23,17 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='id_password']")
     protected WebElement passwordField;
     @FindBy(xpath = "//input[@class='btn blockBtn blue']")
-    protected WebElement submitButton;
+    protected WebElement submitLoginButton;
 
     public void submit(){
-        submitButton.click();
+        submitLoginButton.click();
        // return new ReceiptPage(driver);
+    }
+    public void login() throws InterruptedException {
+        driver.findElement(By.xpath("//a[@href='/accounts/login']")).click();
+        Thread.sleep(2000);
+        login("armen","Password");
+        submit();
     }
 
 }
