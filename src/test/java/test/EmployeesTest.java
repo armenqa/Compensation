@@ -1,6 +1,7 @@
 package test;
 import core.Driver;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -54,7 +55,7 @@ public class EmployeesTest {
         //navigate second page of "Employees"
         webdriver.findElement(xpaths.navigateSecond).click();
     }
-    @AfterTest
+    @AfterMethod
     private void  closeDriver(){
         webdriver.close();
         webdriver.quit();

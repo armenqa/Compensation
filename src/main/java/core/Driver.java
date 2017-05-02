@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
  */
 public class Driver {
     public WebDriver driver(){
-        System.setProperty("webdriver.chrome.driver","C:/Users/STDev_003/Desktop/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:/Users/Armen QA/Desktop/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         WebDriver driver =new ChromeDriver(options);
