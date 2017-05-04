@@ -3,6 +3,7 @@ package core;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterMethod;
 
 /**
  * Created by STDev_003 on 4/27/2017.
@@ -16,4 +17,5 @@ public class Driver {
         driver.get("http://compensation.codebnb.me");
         return driver;
     }
+
 }

@@ -30,7 +30,7 @@ public class Xpaths {
     final   By inpFild = By.xpath(".//*[@id='first_name_panel']/div[1]/div[1]/input");
     final   By searchbutton = By.xpath(".//*[@id='first_name_panel']/div[1]/div[1]/button");
     final   By searchIcon = By.xpath(".//*[@id='employee_table']/div/div[2]/table/thead/tr/th[2]/button");
-    final   By clearTina = By.xpath(".//*[@id='first_name_panel']/div[1]/div[1]/input");
+    final   By clearTina = By.xpath("//input[@data-name='last_name' and @type='text']");
     final   By navigateSecond = By.xpath(".//html/body/div/div[3]/ul/li[4]/a");
     //jobList
     final   By employees = By.xpath("//a[text()='Employees']");
@@ -38,6 +38,10 @@ public class Xpaths {
     final   By verifyJoblist = By.xpath("//h6[text()='Genesis Healthcare: Job list']");
     final   By findJobDropdown = By.xpath("//a[@data-original-title='Show All Items']");
     final   By firstEdit = By.xpath(".//tbody/tr[1]/td[9]/a");
+    final   By canclePage = By.xpath("//a[@class='btnOutline grey']");
+    final   By printjob = By.xpath("//table[@class='tableStyle tableJobs sortable']/tbody/tr[3]/td[7]/button");
+
+
     //sighnin
     final   By log = By.xpath("//a[@href='/accounts/login']");
     final   By username = By.xpath("//input[@id='id_username']");

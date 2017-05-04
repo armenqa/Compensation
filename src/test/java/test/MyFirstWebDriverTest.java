@@ -1,16 +1,13 @@
 package test;
 import core.Driver;
 import org.openqa.selenium.By;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.LoginPage;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;
 
-public class MyFirstWebDriverTest {
+public class MyFirstWebDriverTest  {
     Xpaths xpaths=new Xpaths();
     Driver driver=new Driver();
     WebDriver webdriver;
@@ -33,7 +30,7 @@ public class MyFirstWebDriverTest {
         loginPage = new LoginPage(webdriver);
         loginPage.login();
     }
-    @Test(priority=3)
+    @Test()
     public void  logTrue() throws InterruptedException {
         assertEquals("LOGOUT",webdriver.findElement(xpaths.logOut).getText());
        // webdriver.findElement(xpaths.logOut).click();
@@ -116,7 +113,7 @@ public class MyFirstWebDriverTest {
 
 
 
-   @AfterTest
+   @AfterMethod
    private void  closeDriver(){
       webdriver.close();
        webdriver.quit();

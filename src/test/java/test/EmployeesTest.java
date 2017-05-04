@@ -39,7 +39,7 @@ public class EmployeesTest {
         webdriver.findElement(xpaths.lastNameIcon).click();
         Thread.sleep(4000);
         //click on the input field "Last name icon" and enter the "Tina"
-        webdriver.findElement(xpaths.inpFild).sendKeys("Clinical");
+        webdriver.findElement(xpaths.inpFild).sendKeys("Lewis");
         Thread.sleep(4000);
         //click on the search icon  //should be shown only "Tyna" information in the list
         webdriver.findElement(xpaths.searchbutton).click();

@@ -1,10 +1,15 @@
 package test;
 import core.Driver;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+
+import java.io.File;
+
 import static org.testng.AssertJUnit.assertEquals;
     /*
         Preconditions: When we logged in
@@ -21,6 +26,20 @@ public class JobListTest {
     Driver driver=new Driver();
     WebDriver webdriver;
     LoginPage login;
+    private File getLatestFilefromDir(String dirPath) {
+        File dir = new File(dirPath);
+        File[] files = dir.listFiles();
+        if (files == null || files.length == 0) {
+            return null;
+        }
+        File lastModifiedFile = files[0];
+        for (int i = 1; i < files.length; i++) {
+            if (lastModifiedFile.lastModified() < files[i].lastModified()) {
+                lastModifiedFile = files[i];
+            }
+        }
+        return lastModifiedFile;
+    }
     @BeforeMethod
     public void before() throws InterruptedException {
         webdriver=driver.driver();
@@ -28,7 +47,7 @@ public class JobListTest {
         login.login();
     }
     @Test()
-    public void jobList() throws InterruptedException {
+    public void jobListSearching() throws InterruptedException {
         //Click on the "JOB LIST" button on main menu
         webdriver.findElement(xpaths.jobList).click();
         Thread.sleep(3000);
@@ -37,14 +56,25 @@ public class JobListTest {
         Thread.sleep(3000);
         //Click on the dropdown item to "Find Job"
         webdriver.findElement(xpaths.findJobDropdown).click();
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         //Click on the firs "Edit" icon of  list
         webdriver.findElement(xpaths.firstEdit).click();
         //Should be redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
-        Thread.sleep(4000);
+        //cancle this page
+        webdriver.findElement(xpaths.canclePage).click();
+        Thread.sleep(8000);
         //Verify that we redirect on the "http://compensation.codebnb.me/jobs/edit/6675/" page
+        //download pdf file
+        webdriver.findElement(xpaths.printjob).click();
+        Thread.sleep(6000);
+        File getLatestFile = getLatestFilefromDir("C:/Users/Armen QA/Downloads");
+        String fileName = getLatestFile.getName();
+        Assert.assertTrue(fileName.contains("download"));
     }
-    @AfterTest
+
+
+
+    @AfterMethod
     private void  closeDriver(){
         webdriver.close();
         webdriver.quit();
