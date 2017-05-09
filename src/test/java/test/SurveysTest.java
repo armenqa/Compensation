@@ -34,10 +34,10 @@ public class SurveysTest {
         Thread.sleep(4000);
         //Click on the first row of the "Survey Data" list
         webdriver.findElement(xpaths.surveyData).click();
-        Thread.sleep(3000);
+        Thread.sleep(10000);
         //Click on the drop down icon of the "Details"    http://joxi.ru/bmoJ9jecZzKGry
         webdriver.findElement(xpaths.detailsIcon).click();
-        Thread.sleep(3000);
+        Thread.sleep(10000);
         //Click on the fourth element of the drop down list of "Details"
         webdriver.findElement(xpaths.detailsElement).click();
         //Our "Base,TTC,TDC" information should be updated

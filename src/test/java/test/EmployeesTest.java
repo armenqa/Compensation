@@ -6,17 +6,20 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginPage;
-    /*
-		Preconditions: When we logged in
-		Steps
-		1: Navigate to the Employees page
-		2: Click on the "Last name" icon
-		3: Click on the input field "Last name icon" and enter the "Tina"
-		4: Click on the search icon
-		5: Navigate second page of "Employees"
-		Actual result: Should be shown all information in the list
-		Expected result: We se all information of list
-    */
+
+import static org.testng.AssertJUnit.assertEquals;
+
+/*
+    Preconditions: When we logged in
+    Steps
+    1: Navigate to the Employees page
+    2: Click on the "Last name" icon
+    3: Click on the input field "Last name icon" and enter the "Tina"
+    4: Click on the search icon
+    5: Navigate second page of "Employees"
+    Actual result: Should be shown all information in the list
+    Expected result: We se all information of list
+*/
 public class EmployeesTest {
     Xpaths xpaths = new Xpaths();
     Driver driver = new Driver();
@@ -39,21 +42,19 @@ public class EmployeesTest {
         webdriver.findElement(xpaths.lastNameIcon).click();
         Thread.sleep(4000);
         //click on the input field "Last name icon" and enter the "Tina"
-        webdriver.findElement(xpaths.inpFild).sendKeys("Lewis");
+        webdriver.findElement(xpaths.inpFild).sendKeys("12312312425867,.../,");
+        Thread.sleep(2000);
+        webdriver.findElement(xpaths.searchButton).click();
         Thread.sleep(4000);
-        //click on the search icon  //should be shown only "Tyna" information in the list
-        webdriver.findElement(xpaths.searchbutton).click();
+        webdriver.findElement(xpaths.verifyMessage).isDisplayed();
+        webdriver.findElement(xpaths.lastNameIcon).click();
         Thread.sleep(4000);
-        //click on the search icon
-        webdriver.findElement(xpaths.searchIcon).click();
+        webdriver.findElement(xpaths.inpFild).clear();
         Thread.sleep(4000);
-        //clear "Tena" in the input field
-        webdriver.findElement(xpaths.clearTina).clear();
-        //click on the search icon  //should be shown all information in the list
-        webdriver.findElement(xpaths.searchbutton).click();
+        webdriver.findElement(xpaths.inpFild).sendKeys("GREEN");
+        webdriver.findElement(xpaths.searchButton).click();
         Thread.sleep(4000);
-        //navigate second page of "Employees"
-        webdriver.findElement(xpaths.navigateSecond).click();
+
     }
     @AfterMethod
     private void  closeDriver(){

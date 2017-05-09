@@ -30,6 +30,7 @@ public class MarketMatcherTest {
     void openMarketMatcher() throws InterruptedException {
         webdriver.findElement(xpaths.marketMatcher).click();
         webdriver.findElement(xpaths.comboBox).click();
+        Thread.sleep(3000);
         webdriver.findElement(xpaths.lisecond).click();
         Thread.sleep(3000);
         webdriver.findElement(xpaths.gradeVerify).isDisplayed();
