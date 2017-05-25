@@ -24,6 +24,7 @@ public class MyFirstWebDriverTest  {
     Actual result: Should be redirect on the "http://compensation.codebnb.me/" page.
     Expected result: Redirected on the "http://compensation.codebnb.me/" page.
      */
+
     @BeforeMethod()
     public void  sighninDriver() throws InterruptedException {
         webdriver=driver.driver();

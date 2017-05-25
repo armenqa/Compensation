@@ -44,6 +44,9 @@ public class Xpaths {
     final   By canclePage = By.xpath("//a[@class='btnOutline grey']");
     final   By printjob = By.xpath("//table[@class='tableStyle tableJobs sortable']/tbody/tr[3]/td[7]/button");
     final   By inputJob = By.xpath("//li[@class='hoverOpenBtn'][1]");
+    final   By optionGradeName = By.xpath("//select[@name='grade_name']/option[5]");
+    final   By popupPrintRadiobutton = By.xpath("//div[@class='modal-body']/form/label[1]/input");
+    final   By popupSubmit = By.xpath("//div[@class='modal-footer']/button[@id='print_or_send_email']");
 
     //JobListEdit
     final   By JobTitles = By.xpath("//input[@id='id_title']");
