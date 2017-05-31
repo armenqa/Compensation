@@ -1,0 +1,47 @@
+Document Title: “Test Plan for  Compensation project”	4/3/2017
+Document Author: Armen Seyranyan
+
+
+
+Test Plan for “Compensation” project
+
+Table of Content
+1.	Introduction
+1.	 Description of this document
+2.	 Related Documents
+3.	 Schedule and Milestone
+2.	 Resource Requirements
+1.	 Software
+2.	 Test Tools
+3.	 Staffing and Responsibilities
+3.	 Test Strategy
+4.	Features to be tested/ Test Approach
+5.	Features Not to be tested
+6.	Test Deliverables
+7.	Dependencies/Risks
+1.	 Dependencies
+2.	 Risks
+
+
+1.	Introduction
+Test Plan document for Compensation  project is to create automated test script(s) to test the functionality according to the existing documentation. 
+1.	 Description of this Document
+      This document is meant to describe how to test the Compensation application.
+2.	 Related Documents
+There isn’t documentation yet
+3.	 Schedule and Milestones
+70-80 man days to create the automation test scripts for project
+2.	Features To Be Tested / Test Approach
+
+Features: JOB LIST , EMPLOYEES, SURVEYS, SALARY STRUCTURES,  MARKET MATCHER
+3.Test Tools 
+Selenium web driver
+Testng
+
+4.Test Strategy
+Agile method
+
+
+8. Test Deliverables
+As a tester I will assume that the test plan succeeded in the event that all the pre-planned tests pass without errors, then we see all the expected results
+	 
